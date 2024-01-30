@@ -1,38 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.debugger {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: rgb(28, 31, 38);
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.calculator {
+  padding-top: 20px;
+  max-width: 423px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 0 34px;
+  font-family: "Poppins";
+  color: red;
+  text-align: right;
+  min-height: 54px;
+  height: max-content;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  flex: 0.2;
+}
+
+.remember {
+  min-height: 35px;
+  height: max-content;
+  color: #37373785;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 0 34px;
+  font-family: "Poppins";
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 0.2;
+}
+
+.numberPlace {
+  height: 70px;
+  margin-bottom: 9px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 34px;
+  font-family: "Poppins";
+  font-size: 26px;
+  font-weight: 700;
+  align-items: center;
+  flex: 0.2;
+}
+
+.numberPlace .number {
+  font-size: 40px;
+}
+
+.numbers {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(46, 142, 226, 1) 50%,
+    rgba(99, 150, 197, 1) 100%
+  );
+  border-radius: 30px;
+
+  display: grid;
+  grid-template:
+    "tools tools tools function"
+    "mainNumbers mainNumbers mainNumbers function"
+    "mainNumbers mainNumbers mainNumbers function"
+    "mainNumbers mainNumbers mainNumbers function"
+    "mainNumbers mainNumbers mainNumbers function";
+  padding: 26px 34px;
+  row-gap: 20px;
+  column-gap: 25px;
+  flex: 0.4;
+}
+
+button {
+  border: none;
+  border-radius: 40px;
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+  font-size: 26px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: rgb(31, 127, 211) !important;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tools {
+  grid-area: tools;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.318);
+  border-radius: 40px;
+  justify-content: space-between;
+  height: max-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tools button {
+  background-color: transparent;
+}
+
+.function {
+  grid-area: function;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.318);
+  border-radius: 40px;
+}
+
+.function button {
+  background-color: transparent;
+}
+
+.mainNumbers {
+  grid-area: mainNumbers;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.answer {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 40px;
+}
+
+@media (max-width: 450px) {
+  button {
+    height: 60px;
+    width: 60px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .calculator {
+    max-width: 100%;
+    border-radius: 0px;
+    height: 100%;
+  }
+
+  .numbers {
+    border-radius: 0px;
+  }
+}
+
+@media (max-width: 390px) {
+  button {
+    height: 50px;
+    width: 50px;
   }
 }
